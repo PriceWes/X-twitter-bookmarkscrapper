@@ -1,4 +1,4 @@
-# 📌 X-twitter-bookmarkscrapper
+#  X-twitter-bookmarkscrapper
 
 A Python automation script that extracts your bookmarked posts from **X (formerly Twitter)** and saves them in a clean, structured `JSON` file.
 

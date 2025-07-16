@@ -1,4 +1,4 @@
-# X-twitter-bookmarkscrapper
+# 📌 X-twitter-bookmarkscrapper
 
 A Python automation script that extracts your bookmarked posts from **X (formerly Twitter)** and saves them in a clean, structured `JSON` file.
 
@@ -24,7 +24,27 @@ Make sure you have the following:
 * **Python 3.6+**
 * **Google Chrome** (installed on your system)
 
-Install dependencies with:
+---
+
+## 🛠️ Setup & Usage (with Virtual Environment)
+
+### 1. 📦 Clone the repository
+
+```bash
+git clone https://github.com/yourusername/x-twitter-bookmarkscrapper.git
+cd x-twitter-bookmarkscrapper
+```
+
+### 2. 🧪 Create and activate a virtual environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate      # On Linux/macOS
+# OR
+venv\Scripts\activate         # On Windows
+```
+
+### 3. 📚 Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -34,28 +54,26 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ Setup & Usage
+## ▶️ Running the Script
 
-1. **Run the script:**
+```bash
+python x_bookmarks_scrapper.py
+```
 
-   ```bash
-   python x_bookmarks_scrapper.py
-   ```
+---
 
-2. **Manual Login:**
+## 🔐 Manual Login
 
-   * A Chrome browser window will open and navigate to [https://twitter.com/i/bookmarks](https://twitter.com/i/bookmarks)
-   * Log into your X account manually
-   * Once bookmarks are loaded, **return to the terminal and press ENTER**
+* A Chrome browser window will open and navigate to [https://twitter.com/i/bookmarks](https://twitter.com/i/bookmarks)
+* Log into your X account manually
+* Once bookmarks are loaded, **return to the terminal and press ENTER**
 
-3. **Extraction Process:**
+---
 
-   * The script scrolls to load additional bookmarks
-   * Bookmark details are extracted and saved
+## 🔍 Extraction Process
 
-4. **Output:**
-
-   * Results are saved to `bookmarks.json` in the project directory
+* The script scrolls to load more bookmarks
+* Extracted details are saved in `bookmarks.json` inside the project folder
 
 ---
 
@@ -75,11 +93,9 @@ Each bookmark is stored as a JSON object like this:
 
 ## ⚙️ Configuration Options
 
-You can customize the following settings in `x_bookmarks_scrapper.py`:
-
 ### 🔁 Scroll Settings
 
-Adjust number of scrolls and delay between scrolls in the `scroll_to_load()` function:
+You can adjust the number of scrolls and delay time:
 
 ```python
 scroll_to_load(driver, scrolls=7, delay=2)
@@ -87,15 +103,11 @@ scroll_to_load(driver, scrolls=7, delay=2)
 
 ### 🧠 Persistent Login (Optional)
 
-To avoid logging in every time:
-
-1. Uncomment this line in `setup_browser()`:
+Uncomment the following line in `setup_browser()` to keep your login session saved:
 
 ```python
 # options.add_argument("--user-data-dir=selenium")
 ```
-
-2. This creates a user profile that keeps your login session cached.
 
 ---
 
@@ -105,16 +117,17 @@ To avoid logging in every time:
 ├── x_bookmarks_scrapper.py   # Main script
 ├── requirements.txt          # Python dependencies
 ├── bookmarks.json            # Output file (auto-generated)
-└── .gitignore                # Python and Selenium-related exclusions
+├── .gitignore                # Git ignored files
+└── venv/                     # Virtual environment (ignored by Git)
 ```
 
 ---
 
 ## 🛠️ Troubleshooting
 
-* **Chrome not found?** Make sure it’s installed and accessible from your system’s PATH.
-* **Driver mismatch?** `webdriver-manager` should auto-resolve it, but try updating manually if needed.
-* **X login fails?** Be sure you're using the correct URL and allow time for bookmarks to load before pressing ENTER.
+* **Chrome not found?** Ensure it's installed and added to your system PATH
+* **ChromeDriver version mismatch?** `webdriver-manager` handles it automatically
+* **Login fails?** Ensure you're on the correct page and fully logged in before pressing ENTER
 
 ---
 
@@ -126,9 +139,7 @@ This project is for **personal, non-commercial use** only. Please respect [X's T
 
 ## 👤 Author
 
-**PRICEWES*
+**PRICEWES**
 Feel free to fork, modify, or contribute with proper credit!
 
 ---
-
-

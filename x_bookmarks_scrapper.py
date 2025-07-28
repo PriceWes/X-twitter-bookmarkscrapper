@@ -54,7 +54,7 @@ def main():
 
     input("📌 Log into your Twitter account, then press ENTER when bookmarks are visible...")
 
-    scroll_to_load(driver, scrolls=7, delay=2)
+    scroll_to_load(driver, scrolls=500, delay=2)
 
     print("🔍 Extracting bookmarks...")
     bookmarks = extract_bookmarks(driver)
